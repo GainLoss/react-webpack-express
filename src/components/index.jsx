@@ -1,20 +1,17 @@
-import React, {Component, PropTypes} from 'react';
-class Main extends Component {
-  constructor(props) {
-      super(props);
-  }
 
-  render() {
-      return (
-          <div>
-             1
-          </div>
-      );
-  }
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Nav from './nav.jsx';
+
+
+class Index extends React.Component{
+    render(){
+        return (
+            <div>
+             <Nav/>
+             <h1>这是内容页</h1>
+            </div>
+        )
+    }
 }
-
-
-export default template({
-  component: Main,
-  url: '/shopro/data/balance'
-});
+export default Index

@@ -13,8 +13,11 @@ if (module.hot) {
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './router/router.jsx';
+
+
 ReactDOM.render(
-    <h1>Hello, world!Hello, react!</h1>,
+    <App/>,
     document.getElementById('content')
 );
 
