@@ -10,9 +10,11 @@
 if (module.hot) {
     module.hot.accept();
 }
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Hero from './components/index.jsx';
+ReactDOM.render(
+    <h1>Hello, world!Hello, react!</h1>,
+    document.getElementById('content')
+);
 
-console.log(Hero)
-console.log(3434)

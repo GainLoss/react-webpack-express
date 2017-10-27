@@ -1,9 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom'
+import React, {Component, PropTypes} from 'react';
+class Main extends Component {
+  constructor(props) {
+      super(props);
+  }
+
+  render() {
+      return (
+          <div>
+             1
+          </div>
+      );
+  }
+}
 
 
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
+export default template({
+  component: Main,
+  url: '/shopro/data/balance'
+});

@@ -31,5 +31,6 @@ if(process.env.NODE_ENV!=='production'){
 
 var server=app.listen(2000,function(){
     var port=server.address().port;
+    console.log(port)
     console.log('http://localhost:%s',port);
 })

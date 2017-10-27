@@ -4,7 +4,7 @@ HtmlWebpackPlugin = require('html-webpack-plugin'),
 ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports={
-    entry: ['webpack-hot-middleware/client', './src/app.js'],
+    entry: ['webpack-hot-middleware/client', './src/app.jsx'],
     output: {
         path: __dirname + '/build',
         filename: "bundle.js",
@@ -13,19 +13,20 @@ module.exports={
     module:{
         rules:[
             {
-                test:/\.js$/,
-                include:['./src/'],
-                loader:'babel-loader',
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
                 query: {
-                    presets: ['es2015', 'react']
+                    presets: ['es2015', 'babel']
                 }
             },
+           
             {
-                test: /\.js[x]$/,
-                include:['./src/'],
-                loader:'babel-loader,jsx,babel',
+                test: /\.jsx$/,
+                exclude: /node_modules/,
+                loader:'babel-loader',
                 query: {
-                    presets: ['es2015', 'react']
+                    presets: ['react','es2015']
                 }
             }
         ]
