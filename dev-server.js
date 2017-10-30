@@ -6,6 +6,8 @@
 //这个文件相当于将vue-cli中的dev-server+server文件夹中index.js结合起来
 var express=require('express')
 var app=express();
+var api=require('./server/api.js')
+app.use(api);
 app.use('/',require('connect-history-api-fallback')());
 app.use('/',express.static('public'))
 

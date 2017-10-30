@@ -1,0 +1,60 @@
+/*home-menu.jsx*/
+.homeMenu{
+    height:46px;
+    line-height:46px;
+    border-bottom:1px solid rgba(204,204,204,.4);
+    background:#fff;
+}
+.homeMenuCon{
+    width:960px;
+    height:50px;
+    margin:0 auto
+}
+.homeMenuCon .homeMenuConLeft{
+    float:left;
+}
+.homeMenuCon .homeMenuConRight{
+    float:right;
+}
+.homeMenuCon span{
+    padding:0px 10px;
+    font-size:14px;
+}
+.homeMenuCon span:hover{
+    color:#007fff;
+    cursor:pointer
+}
+.homeMain{
+    width:960px;
+    margin:20px auto;
+    
+}
+.homeMainLeft{
+    width:700px;
+    float:left;
+}
+.homeMainLeft-one{
+    height:50px;
+    line-height:50px;
+    font-size:14px;
+    background:#fff;
+}
+.homeMainLeft-one span{
+    padding:0px 10px;
+}
+.homeMainRight{
+    width:240px;
+    margin-left:20px;
+    float:left;
+}
+.homeMainLeft-two{
+    height:46px;
+    background:#fff;
+    margin-top:20px;
+    font-size:14px;
+    border-bottom:1px soldi rgba(204,204,204,.5)
+}
+.homeMainLeft-two span{
+    padding:0px 10px;
+    border-right:1px solid rgba(204,204,204,.5)
+}

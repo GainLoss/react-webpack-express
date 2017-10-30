@@ -1,0 +1,52 @@
+.nav{
+    border-bottom:1px solid rgba(204,204,204,.5);
+    height:60px;
+    background:#fff
+}
+.navCon{
+    width:960px;
+    height:60px;
+    line-height:60px;
+    margin:0 auto;
+
+}
+.navOne{
+    float:left;
+    margin-right:20px;
+    width:auto;
+    display:inline-block;
+}
+.navOne img{
+    margin-top:10px;
+}
+.navTwo li{
+    padding:0px 20px;
+    float:left;
+    font-size:16px;
+    cursor:pointer
+}
+.navTwo li:hover{
+    color:#007fff
+}
+.navTwo ul .active a{
+    color:#007fff
+}
+.navThree{
+    float:left;
+    height:60px;
+    line-height:60px;
+
+}
+.navThree img{
+    display:inline-block;
+    vertical-align:middle;
+    margin:0px 10px;
+}
+.navThree input{
+    width:180px;
+    height:30px;
+    line-height:30px;
+    padding:0px 0px 0px 10px;
+    border:1px solid rgba(0,0,0,.2);
+    margin-right:10px;
+}

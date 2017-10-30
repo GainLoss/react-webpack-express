@@ -1,21 +1,29 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
-import Index from '../components/index.jsx';
-import Home from '../components/home.jsx';
+import { HashRouter, Route } from 'react-router-dom'
+//首页 专栏 发现 收藏级 开源库
+import Home from '../components/home/home.jsx';
+import Zl from '../components/zhuanlan/view.jsx';
+import Find from '../components/find/view.jsx';
+import Collect from '../components/collect/view.jsx';
+import Open from '../components/open/view.jsx';
 
 const PrimaryLayout = () => (
     <div className="primary-layout">
-      {/* 这是组件渲染的位置 */}
+     
       <main>
-        <Route path="/" exact component={Index} />
+        <Route path="/" exact component={Home} />
         <Route path="/home" component={Home} />
+        <Route path="/zhuanlan" component={Zl}/>
+        <Route path="/find" component={Find}/>
+        <Route path="/collect" component={Collect}/>
+        <Route path="/open" Component={Open}/>
       </main>
     </div>
 )
   
 const App = () => (
-    <BrowserRouter>
+    <HashRouter>
       <PrimaryLayout />
-    </BrowserRouter>
+    </HashRouter>
 )
 export default App;
