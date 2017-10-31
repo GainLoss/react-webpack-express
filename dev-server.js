@@ -4,9 +4,14 @@
 //6.配置静态资源 7.启动服务器特定端口 8.自动打开浏览器
 //说明： express服务器提供静态文件服务，不过它还使用了http-proxy-middleware，一个http请求代理的中间件。前端开发过程中需要使用到后台的API的话，可以通过配置proxyTable来将相应的后台请求代理到专用的API服务器。
 //这个文件相当于将vue-cli中的dev-server+server文件夹中index.js结合起来
-var express=require('express')
+var express=require('express');
 var app=express();
-var api=require('./server/api.js')
+var api=require('./server/api.js');
+var bodyParser=require('body-parser');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
+
 app.use(api);
 app.use('/',require('connect-history-api-fallback')());
 app.use('/',express.static('public'))

@@ -41,12 +41,14 @@
 }
 .homeMainLeft-one span{
     padding:0px 10px;
+    color:#007fff
 }
 .homeMainRight{
     width:240px;
     margin-left:20px;
     float:left;
 }
+
 .homeMainLeft-two{
     height:46px;
     background:#fff;
@@ -56,5 +58,19 @@
 }
 .homeMainLeft-two span{
     padding:0px 10px;
-    border-right:1px solid rgba(204,204,204,.5)
+    border-right:1px solid rgba(204,204,204,.5);
+    cursor:pointer;
+}
+.homeMainLeft-two a:hover{
+    color:#007fff
+}
+.homeMainLeft-two .homesortactive a{
+    color:#007fff
+}
+
+.homeMainLeft-three .homeEveryStyle{
+    height:117px;
+    background:#fff;
+    border-top:1px solid rgba(204,204,204,.3);
+    padding:10px 20px;
 }

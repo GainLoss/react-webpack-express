@@ -37,7 +37,7 @@ class OpenMenu extends React.Component{
                 </div>
                 <div className="homeMain">
                     <div className="homeMainLeft">
-                        <div class="homeMainLeft-one">
+                        <div className="homeMainLeft-one">
                             <span>写文章</span>
                             <span>分享链接</span>
                             <span>草稿</span>
@@ -58,7 +58,7 @@ class OpenMenu extends React.Component{
                                 }
                             </div>
                         </div>
-                        <div class="homeMainLeft-three"></div>
+                        <div className="homeMainLeft-three"></div>
                     </div>
                     <div className="homeMainRight">
                         <img src={rightimg1}/>

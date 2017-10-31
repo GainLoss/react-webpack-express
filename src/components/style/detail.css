@@ -1,0 +1,17 @@
+.Hdetail{
+    width:960px;
+    margin:20px auto;
+}
+.HdetailLeft{
+    float:left;
+    width:660px;
+    min-height:500px;
+    background:#fff;
+    padding:20px;
+}
+.HdetailRight{
+    float:left;
+    margin-left:20px;
+    width:240px;
+}
+
