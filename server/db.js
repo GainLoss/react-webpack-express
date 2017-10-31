@@ -7,11 +7,11 @@ db.once('open',()=>console.log('Mongodb connection successed'));
 const home=mongoose.Schema({
     title:String,
     user:String,
-    time:Date,
+    con:String
 })
 
 const Models={
-    Home:mongoose.model('Home',home,'home')
+    home:mongoose.model('home',home,'home')
 }
 
 module.exports=Models
