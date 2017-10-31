@@ -11,9 +11,9 @@
 * 基本的页面架构出来了，其中用到了react react-router;
 * 前台可以获取到后台的数据，用到的是express mongoose链接数据库mongodb
 ### 相关说明
-[This link](http://www.cnblogs.com/GainLoss/p/7692315.html) has no title attribute
-[This link](http://www.cnblogs.com/GainLoss/p/7753154.html) has no title attribute
-[This link](http://www.cnblogs.com/GainLoss/p/7692315.html) has no title attribute
+[React理解](http://www.cnblogs.com/GainLoss/p/7692315.html)
+[整个项目说明](http://www.cnblogs.com/GainLoss/p/7753154.html) 
+[React总结](http://www.cnblogs.com/GainLoss/p/7692315.html) 
 ### 接下来是将页面按照原本的显示全，肯定还会有其他功能需要补充的
 
 
