@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style/nav.css'
 import navImg1 from '../imges/add.png';
-import navImg2 from '../imges/ling.png'
+import navImg2 from '../imges/ling.png';
+import navLogo from '../imges/logo.png';
+
 
 
 class Nav extends React.Component{
@@ -23,6 +25,7 @@ class Nav extends React.Component{
     render(){
         let navimg1={width:'24px',height:'24px',}
         let navimg2={width:'24px',height:'24px',}
+        let navlogo={width:'40px',height:'40px'}
         return(
             <div className="nav">
                 <div className="navCon">
@@ -40,6 +43,7 @@ class Nav extends React.Component{
                         <input type="text" placeholder="搜索掘金"/>
                         <img style={navimg1} src={navImg1}/>
                         <img style={navimg2} src={navImg2}/>
+                        <img style={navlogo} src={navLogo}/>
                     </div>
                 </div>
             </div>

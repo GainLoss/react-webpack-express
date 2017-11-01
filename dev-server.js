@@ -8,20 +8,21 @@ var express=require('express');
 var app=express();
 var api=require('./server/api.js');
 var bodyParser=require('body-parser');
-
+//获取到客户端传的参数
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
-
+//获取到后台的api
 app.use(api);
 app.use('/',require('connect-history-api-fallback')());
 app.use('/',express.static('public'))
-
+//如果是开发模式的话
 if(process.env.NODE_ENV!=='production'){
+    //引入webpack模式
     var webpack=require('webpack');
     var webpackConfig=require('./webpack.config.js');
     var webpackCompiled=webpack(webpackConfig);
 
-    var webpackDevMiddleware=require('webpack-dev-middleware');
+    var webpackDevMiddleware=require('webpack-dev-middleware');//webpack-dev-middleware结合webpack-hot-middleware实现热重载开发服务器，但是这个是直接将代码放在内存中的
     app.use(webpackDevMiddleware(webpackCompiled,{
         publicPath:'/',
         stats:{color:true},
@@ -35,7 +36,7 @@ if(process.env.NODE_ENV!=='production'){
     var webpackHotMiddleware=require('webpack-hot-middleware');
     app.use(webpackHotMiddleware(webpackCompiled));
 }
-
+//监听端口
 var server=app.listen(2000,function(){
     var port=server.address().port;
     console.log(port)

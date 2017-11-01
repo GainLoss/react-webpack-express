@@ -6,8 +6,7 @@
   "scripts": {
     "build": "webpack",
     "start": "node ./dev-server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
@@ -44,6 +43,7 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",
+    "wangeditor": "^3.0.12",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3",
     "webpack-hot-middleware": "^2.20.0"

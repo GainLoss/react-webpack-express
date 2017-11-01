@@ -32,7 +32,7 @@ module.exports={
             {
                 test:/\.css$/,
                 exclude: /node_modules/,
-                loader: "style-loader!css-loader"
+                loader: "style-loader!css-loader"//注意这里我们需要写全，要不就出错了
             },
             {
                 test:/\.jpg|png|gif|jpeg$/,
@@ -49,8 +49,5 @@ module.exports={
         new ExtractTextPlugin('[name]-[hash:3].css'), //css随机数
         new webpack.HotModuleReplacementPlugin(), //热加载插件
         
-    ],
-    
-   
-    
+    ], 
 }
