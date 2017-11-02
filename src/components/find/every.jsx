@@ -21,7 +21,7 @@ class FindEvery extends React.Component{
         let that=this;
         let tab=nextProps.tab||'attention';
         let sort=nextProps.sort||'like'
-        fetch("/list/show",{
+        fetch("/find/list/show",{
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -38,7 +38,7 @@ class FindEvery extends React.Component{
     //子组件一开始渲染的时候
     componentWillMount(){
         let that=this;
-        fetch("/list/show",{
+        fetch("/find/list/show",{
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"

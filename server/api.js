@@ -30,5 +30,33 @@ router.post('/list/detail',(req,res)=>{
         }
     })
 })
-
+//展示zhuanlan
+router.post('/zl/list/show',(req,res)=>{
+    let tab=req.body.tab;//根据all和web
+    let sort=req.body.sort;//排序
+    let json={};
+    json[sort]=1;
+    models.zhuanlan.find({sort:tab}).sort(json).exec((err,data)=>{
+        if(err){
+            res.send(err)
+        }else{
+            res.send(data)
+        }
+    })
+})
+//展示find发现
+router.post('/find/list/show',(req,res)=>{
+    let tab=req.body.tab;//根据all和web
+    let sort=req.body.sort;//排序
+    let json={};
+    json[sort]=1;
+    console.log(tab)
+    models.find.find({sort:tab}).sort(json).exec((err,data)=>{
+        if(err){
+            res.send(err)
+        }else{
+            res.send(data)
+        }
+    })
+})
 module.exports=router

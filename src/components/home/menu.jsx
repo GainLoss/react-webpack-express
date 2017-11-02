@@ -94,7 +94,7 @@ class HomeMenu extends React.Component {
                     <div className="homeMainLeft">
                         <div className="homeMainLeft-one">
                             <img src={leftLogo} style={leftLogoStyle} />
-                            <span>写文章</span>
+                            <span><Link to="/write">写文章</Link></span>
                             <span>分享链接</span>
                             <span>草稿</span>
                         </div>

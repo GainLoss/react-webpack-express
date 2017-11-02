@@ -23,16 +23,7 @@ class OpenMenu extends React.Component {
                 { name: '本周最热', tab: 'web' },
                 { name: '本月最热', tab: 'web' }
             ],
-            HomeMenuone: [
-                { name: '热门', sort: 'like' },
-                { name: '最新', sort: 'new' },
-                { name: '评论', sort: 'collect' },
-            ],
-            HomeMenutwo: [
-                { name: '本周最热', sort: 'weekHot' },
-                { name: '本月最热', sort: 'monthHot' },
-                { name: '历史最热', sort: 'allHot' },
-            ],
+           
             EveryParamsTab:'attention',
             EveryParamsSort:'like',
             menuOne: 'attention',
@@ -96,27 +87,6 @@ class OpenMenu extends React.Component {
                 </div>
                 <div className="homeMain">
                     <div className="homeMainLeft">
-                        
-                        <div className="homeMainLeft-two" style={homeMainLeftTwoStyle}>
-                            <div style={homeMainLeftTwodiv1}>
-                                {
-                                    this.state.HomeMenuone.map((item, index) =>
-                                        <span key={index} className={this.state.menuTwo === item.sort ? "homesortactive" : ""} data-sort={item.sort} onClick={this.clickMenu}>
-                                            {item.name}
-                                        </span>
-                                    )
-                                }
-                            </div>
-                            <div style={homeMainLeftTwodiv2}>
-                                {
-                                    this.state.HomeMenutwo.map((item, index) =>
-                                        <span key={index} className={this.state.menuTwo === item.sort ? "homesortactive" : ""} data-sort={item.sort} onClick={this.clickMenu}>
-                                            {item.name}
-                                        </span>
-                                    )
-                                }
-                            </div>
-                        </div>
                         <div className="homeMainLeft-three">
                             <OpenEvery tab={this.state.EveryParamsTab} sort={this.state.EveryParamsSort}/>
                         </div>

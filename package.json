@@ -26,6 +26,7 @@
     "body-parser": "^1.18.2",
     "connect-history-api-fallback": "^1.4.0",
     "css-loader": "^0.28.7",
+    "draft-js": "^0.10.4",
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "fetch": "^1.1.0",
@@ -38,6 +39,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-hot-loader": "^3.1.1",
+    "react-markdown-editor": "^0.6.2",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "sass-loader": "^6.0.6",
@@ -47,5 +49,10 @@
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3",
     "webpack-hot-middleware": "^2.20.0"
+  },
+  "dependencies": {
+    "add": "^2.0.6",
+    "or": "^0.2.0",
+    "yarn": "^1.2.1"
   }
 }

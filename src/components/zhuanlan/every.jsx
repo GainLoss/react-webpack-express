@@ -21,7 +21,7 @@ class ZlEvery extends React.Component{
         let that=this;
         let tab=nextProps.tab||'attention';
         let sort=nextProps.sort||'like'
-        fetch("/list/show",{
+        fetch("/zl/list/show",{
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -38,7 +38,7 @@ class ZlEvery extends React.Component{
     //子组件一开始渲染的时候
     componentWillMount(){
         let that=this;
-        fetch("/list/show",{
+        fetch("/zl/list/show",{
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -56,13 +56,16 @@ class ZlEvery extends React.Component{
         let homeEveryLike={padding:"5px 10px",float:"left",border:"1px solid rgba(204,204,204,.5)"}
         let homeEveryImg={width:"15px",height:"15px",float:"left",marginRight:"6px"}
         let homeEverySpan={float:"left",lineHeight:"12px"}
+        //这个组件特殊的样式
+        let homeEveryStyle={height:'208px'}
         return(
             <div>
                 {
                     this.state.result.map((item,index)=>
-                        <div className="homeEveryStyle" key={index}>
-                            <div>{item.sort}&nbsp;&nbsp;●&nbsp;&nbsp;{item.user}&nbsp;&nbsp;●&nbsp;&nbsp;{item.time.toLocaleString()}</div>
-                            <h3><Link to={{pathname:'/detail',search:'id='+item._id}} >{item.title}</Link></h3>
+                        <div className="homeEveryStyle" style={homeEveryStyle} key={index}>
+                            <div>{item.user}&nbsp;&nbsp;●&nbsp;&nbsp;</div>
+                            <h1><Link to={{pathname:'/detail',search:'id='+item._id}} >{item.title}</Link></h1>
+                            <div>{item.con}</div>
                             <div>
                                 <div style={homeEveryLike}><img style={homeEveryImg} src={homeEveryImgLike}/><p style={homeEverySpan}>{item.like}</p></div>
                                 <div style={homeEveryLike}><img style={homeEveryImg} src={homeEveryImgMs}/><span style={homeEverySpan}>{item.collect}</span></div>

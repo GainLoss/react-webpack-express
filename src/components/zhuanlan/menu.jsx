@@ -79,7 +79,7 @@ class ZlMenu extends React.Component {
         let homeMainLeftTwodiv2 = { float: "right" }
         let rightImg = { margin: '20px 0px 0px 0px' }
         let leftLogoStyle = { width: '50px', height: '50px', marginRight: "20px" }
-        //专栏的特殊样式
+        //每个组件的特殊样式
         let homeMainLeftTwoH={fontSize:'17px',fontWeight:'bold',marginLeft:'20px',float:'left'}
         let homeMainLeftTwoStyle={marginTop:'0px'}
         return (

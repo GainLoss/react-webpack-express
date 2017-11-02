@@ -10,7 +10,6 @@ import Collect from '../components/collect/view.jsx';
 import Open from '../components/open/view.jsx';
 import Write from '../components/write.jsx';
 import Hdetail from '../components/home/detail.jsx';
-import HomeEvery from '../components/home/every.jsx'
 
 
 
@@ -21,8 +20,8 @@ const PrimaryLayout = () => (
           <Switch>
             <Route path="/" exact component={Home}/>
             <Route path="/home" exact component={Home}/>
-            
             <Route path="/detail" exact component={Hdetail} />
+            <Route path="/Write" exact component={Write}/>
             <Route path="/zhuanlan" exact component={Zl}/>
             <Route path="/find" exact component={Find}/>
             <Route path="/collect" exact component={Collect}/>
