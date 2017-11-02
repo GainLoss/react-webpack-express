@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, Route} from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 //组件
 import HomeEvery from './every.jsx';
-import Home from './home.jsx'
+import Home from './view.jsx'
 //图片
 import rightimg1 from './img/home_right_1.png'
 import rightimg2 from './img/home_right_2.png'
 import leftLogo from './img/logo.png'
+
+import createHashHistory from 'history/createHashHistory'
+const history = createHashHistory()
 
 
 class HomeMenu extends React.Component {
@@ -16,39 +19,55 @@ class HomeMenu extends React.Component {
         super(props);
         this.state = {
             HomeMenuTop: [
-                { name: '我的关注', tab: 'all' },
+                { name: '我的关注', tab: 'attention' },
                 { name: '前端', tab: 'web' }
             ],
             HomeMenuone: [
-                { name: '热门', sort: 'hot' },
+                { name: '热门', sort: 'like' },
                 { name: '最新', sort: 'new' },
-                { name: '评论', sort: 'comment' },
+                { name: '评论', sort: 'collect' },
             ],
             HomeMenutwo: [
                 { name: '本周最热', sort: 'weekHot' },
                 { name: '本月最热', sort: 'monthHot' },
                 { name: '历史最热', sort: 'allHot' },
             ],
-            menuOne: 'all',
-            menuTwo: 'hot'
+            EveryParamsTab:'attention',
+            EveryParamsSort:'like',
+            menuOne: 'attention',
+            menuTwo: 'like',
         }
         this.clickTop = this.clickTop.bind(this)
         this.clickMenu = this.clickMenu.bind(this)
     }
-    componentWillMount(){
-        console.log(this.props)
-    }
+    
     //点击一级菜单事件
     clickTop(event) {
-        let that=this;
+        let that = this;
         let tab = event.currentTarget.dataset.tab;
         that.setState({ menuOne: tab })
+        history.push({
+            pathname: '/home/'+tab,
+        })
+        that.serach();
     }
     //点击二级菜单事件
     clickMenu(event) {
         var that = this;
         let sort = event.currentTarget.dataset.sort;
         that.setState({ menuTwo: sort })
+        history.push({
+            pathname: history.location.pathname,
+            search:'sort='+sort
+        })
+        that.serach();
+    }
+    serach(){
+        let that=this;
+        let tab=history.location.pathname.split('/')[2];
+        let sort=history.location.search.split('=')[1];
+        this.setState({EveryParamsTab:tab});
+        this.setState({EveryParamsSort:sort})
     }
     render() {
         let homeMainLeftTwodiv1 = { float: "left" }
@@ -61,8 +80,7 @@ class HomeMenu extends React.Component {
                     <div className="homeMenuConLeft">
                         {
                             this.state.HomeMenuTop.map((item, index) =>
-                                <span key={index} className={this.state.menuOne === item.tab ? "homesortactive" : ""} onClick={this.clickTop}>
-                                    
+                                <span key={index} className={this.state.menuOne === item.tab ? "homesortactive" : ""} data-tab={item.tab} onClick={this.clickTop}>
                                     {item.name}
                                 </span>
                             )
@@ -85,14 +103,7 @@ class HomeMenu extends React.Component {
                                 {
                                     this.state.HomeMenuone.map((item, index) =>
                                         <span key={index} className={this.state.menuTwo === item.sort ? "homesortactive" : ""} data-sort={item.sort} onClick={this.clickMenu}>
-                                            <Link to={
-                                                {
-                                                    pathname: "/home",
-                                                    search: 'sort=' + item.sort,
-                                                }
-                                            } >{item.name}</Link>
-
-                                            <Route path="/home/:id" component={Home} />
+                                            {item.name}
                                         </span>
                                     )
                                 }
@@ -101,21 +112,14 @@ class HomeMenu extends React.Component {
                                 {
                                     this.state.HomeMenutwo.map((item, index) =>
                                         <span key={index} className={this.state.menuTwo === item.sort ? "homesortactive" : ""} data-sort={item.sort} onClick={this.clickMenu}>
-                                            <Link to={
-                                                {
-                                                    pathname: "/home",
-                                                    search: 'sort=' + item.sort,
-                                                }
-                                            } >{item.name}</Link>
-
-                                            <Route path="/home/:id" component={Home} />
+                                            {item.name}
                                         </span>
                                     )
                                 }
                             </div>
                         </div>
                         <div className="homeMainLeft-three">
-                            <HomeEvery />
+                            <HomeEvery tab={this.state.EveryParamsTab} sort={this.state.EveryParamsSort}/>
                         </div>
                     </div>
                     <div className="homeMainRight">

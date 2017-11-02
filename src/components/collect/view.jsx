@@ -1,26 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+//组件
+import '../style/home.css';
+import fetch from 'isomorphic-fetch';
 import Nav from '../nav.jsx';
 import CollectMenu from './menu.jsx';
-import CollectEvery from './every.jsx';
-import '../style/home.css'
 
 
-class Collect extends React.Component{
-    constructor(props){
+class Collect extends React.Component {
+    constructor(props) {
         super(props);
-        this.state={url:this.props.location.pathname}
+        this.state = {
+            url: this.props.location.pathname,
+            query: this.props.location,
+        }
     }
-    componentDidMount(){
-        console.log(1)
-        console.log(this.props)
+    componentWillMount() {
     }
-    render(){
+    render() {
         return (
-           <div className="homeCon">
-            <Nav urlLocation={this.state.url}/>
-            <CollectMenu/>
-           </div>
+            <div className="homeCon">
+                <Nav urlLocation={this.state.url} />
+                <CollectMenu urlLocation={this.state.query} />
+                
+            </div>
         )
     }
 }

@@ -35,18 +35,25 @@
     float:left;
     height:60px;
     line-height:60px;
-
+    margin-left:80px;
 }
 .navThree img{
     display:inline-block;
     vertical-align:middle;
-    margin:0px 20px;
+    margin:0px 10px;
 }
 .navThree input{
     width:180px;
     height:30px;
     line-height:30px;
     padding:0px 0px 0px 10px;
-    border:1px solid rgba(0,0,0,.2);
+    border:1px solid rgba(204,204,204,.5);
     margin-right:10px;
+   
+}
+.navThree input:-moz-placeholder{
+    color:#ccc
+}
+.navThree input::-webkit-input-placeholder{
+    color:#ccc
 }

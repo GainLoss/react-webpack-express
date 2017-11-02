@@ -20,8 +20,6 @@ class Nav extends React.Component{
             ]
         }
     }
-    componentDidMount(){
-    }
     render(){
         let navimg1={width:'24px',height:'24px',}
         let navimg2={width:'24px',height:'24px',}
@@ -34,7 +32,9 @@ class Nav extends React.Component{
                         <ul>
                         {
                             this.state.navList.map((item,index)=>{
-                                return <li data-url={item.link} key={index} className={item.link===this.props.urlLocation?'active':''}><Link to={{pathname:item.link }} >{item.name}</Link></li>
+                                return <li data-url={item.link} key={index} className={item.link===this.props.urlLocation?'active':''}>
+                                <Link to={{pathname:item.link }} >{item.name}</Link>
+                                </li>
                             })
                         }
                         </ul>

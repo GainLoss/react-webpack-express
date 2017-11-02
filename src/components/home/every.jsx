@@ -11,16 +11,44 @@ class HomeEvery extends React.Component{
     constructor(props){
         super(props)
         this.state={
-            result:[]
+            result:[],
+            tab:props.tab,
+            sort:props.sort
         }
     }
-    componentWillMount(){
-        fetch("/list/show").then((response)=>{
+    //父组件state变化的时候，这个函数会执行
+    componentWillReceiveProps(nextProps){
+        let that=this;
+        let tab=nextProps.tab||'attention';
+        let sort=nextProps.sort||'like'
+        fetch("/list/show",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: "tab="+tab+"&sort="+sort
+        }).then((response)=>{
             if(response&&response.status===200){
                 return response.json();
             }
         }).then((data)=>{
-            console.log(data)
+            this.setState({result:data})
+        });
+    }
+    //子组件一开始渲染的时候
+    componentWillMount(){
+        let that=this;
+        fetch("/list/show",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: "tab="+this.state.tab+"&sort="+this.state.sort
+        }).then((response)=>{
+            if(response&&response.status===200){
+                return response.json();
+            }
+        }).then((data)=>{
             this.setState({result:data})
         });
     }
@@ -34,7 +62,6 @@ class HomeEvery extends React.Component{
                     this.state.result.map((item,index)=>
                         <div className="homeEveryStyle" key={index}>
                             <div>{item.sort}&nbsp;&nbsp;●&nbsp;&nbsp;{item.user}&nbsp;&nbsp;●&nbsp;&nbsp;{item.time.toLocaleString()}</div>
-                            <Route path="/detail/id" component={Hdetail}/>
                             <h3><Link to={{pathname:'/detail',search:'id='+item._id}} >{item.title}</Link></h3>
                             <div>
                                 <div style={homeEveryLike}><img style={homeEveryImg} src={homeEveryImgLike}/><p style={homeEverySpan}>{item.like}</p></div>

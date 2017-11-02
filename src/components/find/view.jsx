@@ -2,25 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Nav from '../nav.jsx';
 import FindMenu from './menu.jsx';
-import FindEvery from './every.jsx';
-import '../style/home.css'
+import '../style/home.css';
+import fetch from 'isomorphic-fetch';
 
 
-class Find extends React.Component{
-    constructor(props){
+class Find extends React.Component {
+    constructor(props) {
         super(props);
-        this.state={url:this.props.location.pathname}
+        this.state = {
+            url: this.props.location.pathname,
+            query: this.props.location,
+        }
     }
-    componentDidMount(){
-        console.log(1)
-        console.log(this.props)
+    componentWillMount() {
     }
-    render(){
+    render() {
         return (
-           <div className="homeCon">
-            <Nav urlLocation={this.state.url}/>
-            <FindMenu/>
-           </div>
+            <div className="homeCon">
+                <Nav urlLocation={this.state.url} />
+                <FindMenu urlLocation={this.state.query} />
+                
+            </div>
         )
     }
 }

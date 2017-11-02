@@ -13,7 +13,7 @@
 .homeMenuCon .homeMenuConLeft{
     float:left;
 }
-.homeMenuCon .homesortactive a{
+.homeMenuCon .homesortactive{
     color:#007fff
 }
 
@@ -68,7 +68,7 @@
 .homeMainLeft-two a:hover{
     color:#007fff
 }
-.homeMainLeft-two .homesortactive a{
+.homeMainLeft-two .homesortactive{
     color:#007fff
 }
 
