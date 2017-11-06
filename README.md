@@ -7,6 +7,8 @@
 * 打开浏览器：http://localhost:2000
 ### 项目的结构
 
+![maze](https://github.com/GainLoss/vue-node-mongodb/blob/master/static/introduct/1.png) 
+
 ### 注意
 * 说一下调试react的工具：可以用facebook的调试工具React devtools(翻墙在chrome浏览器中扩展程序中查找这个，然后进行安装)
 * 目前完成的功能是：实现界面基本的显示，可以调取后台数据，通过选择对数据进行筛选和排序
