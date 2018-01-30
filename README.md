@@ -1,5 +1,6 @@
 # react-webpack-express
 这是仿照掘金网站的一个用react+express+mongodb实现的可以前后台交互的网站
+* 项目中用到的是自己构建的一个开发环境，当然你也可以用官方的脚手架（create-react-app）
 ### 模块 
 依赖的模块直接看package.json
 ### 运行 
@@ -12,7 +13,6 @@
 ### 注意
 * 说一下调试react的工具：可以用facebook的调试工具React devtools(翻墙在chrome浏览器中扩展程序中查找这个，然后进行安装)
 * 目前完成的功能是：实现界面基本的显示，可以调取后台数据，通过选择对数据进行筛选和排序
-* 项目中用到的是自己构建的一个开发环境，当然你也可以用官方的脚手架（create-react-app）
 ### 创建项目的基本过程
 * 下载node
 * 安装基本的依赖包 express（后台）、mongoose（链接数据库）、webpack（解析和打包文件、热更新）、react+react-router(前台和路由)
