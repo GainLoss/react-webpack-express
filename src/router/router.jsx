@@ -10,6 +10,9 @@ import Collect from '../components/collect/view.jsx';
 import Open from '../components/open/view.jsx';
 import Write from '../components/write.jsx';
 import Hdetail from '../components/home/detail.jsx';
+import Feidian from '../components/feidian/view.jsx';
+import Xiaoce from '../components/xiaoce/view.jsx';
+import Huodong from '../components/huodong/view.jsx';
 
 
 
@@ -26,6 +29,9 @@ const PrimaryLayout = () => (
             <Route path="/find" exact component={Find}/>
             <Route path="/collect" exact component={Collect}/>
             <Route path="/open" exact component={Open}/>
+            <Route path='/feidian' exact component={Feidian}/>
+            <Route path='/xiaoce' exact component={Xiaoce}/>
+            <Route path='/huodong' exact component={Huodong}/>
           </Switch>
         </BrowserRouter>
       </main>

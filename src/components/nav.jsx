@@ -9,14 +9,18 @@ import navLogo from '../imges/logo.png';
 
 class Nav extends React.Component{
     constructor(props){
+        console.log(props)
         super(props);
         this.state={
             navList:[
                 {name:'首页',link:'/home'},
-                {name:'专栏',link:'/zhuanlan'},
-                {name:'收藏集',link:'/collect'},
-                {name:'发现',link:'/find'},
-                {name:'开源库',link:'/open'}
+                {name:'沸点',link:'/feidian'},
+                {name:'小册',link:'/xiaoce'},
+                // {name:'专栏',link:'/zhuanlan'},
+                // {name:'收藏集',link:'/collect'},
+                // {name:'发现',link:'/find'},
+                {name:'开源库',link:'/open'},
+                {name:'活动',link:'/huodong'}
             ]
         }
     }
