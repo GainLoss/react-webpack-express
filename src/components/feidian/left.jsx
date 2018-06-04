@@ -14,10 +14,10 @@ class FLeft extends React.Component{
         super(props)
         this.state={
             currentIndex:0,
+            tab:'tj'
         }
-
     }
-    clickTab(index,e){       
+    clickTab(index,e){   
         this.setState({currentIndex:index});
         var name='';
         if(index===0){
@@ -25,7 +25,9 @@ class FLeft extends React.Component{
         }else{
             name='dt'
         }
-        history.push({pathname:'/feidian/'+name})
+        this.setState({tab:name});
+        console.log(this.state.tab)
+        history.push({pathname:'/feidian/'+name})   
     }
     render(){
         var styles={
@@ -35,7 +37,7 @@ class FLeft extends React.Component{
         var index=this.state.currentIndex;
         return (
             <div className="f_left">
-                <textarea className="f_left_text"></textarea>
+                <textarea className="f_left_text" placeholder="发布沸点内容"></textarea>
                 <div className='f_left_text_choose'>
                     <span>图片</span>
                     <span>链接</span>
@@ -47,7 +49,7 @@ class FLeft extends React.Component{
                     <span onClick={this.clickTab.bind(this,1)} className={this.state.currentIndex===1?'active':''}>动态</span>
                 </div>
                 <div className='choose_con'>
-                    <Detail/>
+                    <Detail tab={this.state.tab}/>
                 </div>
             </div>
         )

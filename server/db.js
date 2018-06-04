@@ -36,12 +36,18 @@ const feidian=mongoose.Schema({
     time:String,
     con:String
 })
+const xiaoce=mongoose.Schema({
+    title:String,
+    user:String,
+    con:String
+})
 //创建对象
 const Models={
     home:mongoose.model('home',home,'home'),
     zhuanlan:mongoose.model('zhuanlan',zhuanlan,'zhuanlan'),
     find:mongoose.model('find',find,'find'),
-    feidian:mongoose.model('feidian',feidian,'feidian')
+    feidian:mongoose.model('feidian',feidian,'feidian'),
+    xiaoce:mongoose.model('xiaoce',xiaoce,'xiaoce')
 }
 
 module.exports=Models

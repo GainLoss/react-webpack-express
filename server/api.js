@@ -50,7 +50,6 @@ router.post('/find/list/show',(req,res)=>{
     let sort=req.body.sort;//排序
     let json={};
     json[sort]=1;
-    console.log(tab)
     models.find.find({sort:tab}).sort(json).exec((err,data)=>{
         if(err){
             res.send(err)
@@ -60,8 +59,18 @@ router.post('/find/list/show',(req,res)=>{
     })
 })
 //沸点内容
-router.post('/feidian/list/show',(req,res)=>{
-    models.feidian.find().exec((err,data)=>{
+router.post('/find/feidian/list',(req,res)=>{
+    var mark=req.body.mark;
+    models.feidian.find({mark:mark}).exec((err,data)=>{
+        if(err){
+            res.send(err)
+        }else{
+            res.send(data)
+        }
+    })
+})
+router.post('/find/xiaoce/list',(req,res)=>{
+    models.xiaoce.find().exec((err,data)=>{
         if(err){
             res.send(err)
         }else{

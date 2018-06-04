@@ -10,20 +10,35 @@ class Detail extends React.Component{
         }
     }
     componentWillMount(){
-        fetch('/feidian/list/show',{
+        fetch('/find/feidian/list',{
             method:'POST',
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
+            body: `mark=tj`,
         }).then((response)=>{
             if(response&&response.status===200){
                return response.json() 
             }
         }).then((data)=>{
             this.setState({result:data})
-
-        })
-        
+        }) 
+    }
+    componentWillReceiveProps(nextProps){//当props改变的话
+        var name=nextProps.tab;
+        fetch('/find/feidian/list',{
+            method:'POST',
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `mark=${name}`,
+        }).then((response)=>{
+            if(response&&response.status===200){
+               return response.json() 
+            }
+        }).then((data)=>{
+            this.setState({result:data})
+        }) 
     }
     render(){
        return(
