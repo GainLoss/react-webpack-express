@@ -5,6 +5,10 @@ import './feidian.css'
 import $ from 'jquery'
 import Detail from './detail.jsx'
 
+
+import createHashHistory from 'history/createHashHistory'
+const history =createHashHistory();
+
 class FLeft extends React.Component{
     constructor(props){
         super(props)
@@ -15,6 +19,13 @@ class FLeft extends React.Component{
     }
     clickTab(index,e){       
         this.setState({currentIndex:index});
+        var name='';
+        if(index===0){
+            name='tj'
+        }else{
+            name='dt'
+        }
+        history.push({pathname:'/feidian/'+name})
     }
     render(){
         var styles={

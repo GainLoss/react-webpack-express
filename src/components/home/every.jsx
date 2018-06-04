@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import homeEveryImgLike from './img/like.png';
 import homeEveryImgMs from './img/message.png';
 import { HashRouter, Route } from 'react-router-dom';
+import $ from 'jquery'
 
 //组件
 import Hdetail from './detail.jsx'
@@ -26,7 +27,7 @@ class HomeEvery extends React.Component{
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
-            body: "tab="+tab+"&sort="+sort
+            
         }).then((response)=>{
             if(response&&response.status===200){
                 return response.json();
@@ -43,7 +44,6 @@ class HomeEvery extends React.Component{
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
-            body: "tab="+this.state.tab+"&sort="+this.state.sort
         }).then((response)=>{
             if(response&&response.status===200){
                 return response.json();

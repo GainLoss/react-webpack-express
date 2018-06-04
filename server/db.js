@@ -1,5 +1,5 @@
 const mongoose=require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/test',{ useMongoClient: true });
 const db=mongoose.connection;
 db.once('error',()=>console.log('Mongodb connection error'));
 db.once('open',()=>console.log('Mongodb connection successed'));

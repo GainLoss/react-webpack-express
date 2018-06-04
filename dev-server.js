@@ -37,8 +37,7 @@ if(process.env.NODE_ENV!=='production'){
     app.use(webpackHotMiddleware(webpackCompiled));
 }
 //监听端口
-var server=app.listen(2000,function(){
+var server=app.listen(2300,function(){
     var port=server.address().port;
-    console.log(port)
     console.log('http://localhost:%s',port);
 })
