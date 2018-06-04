@@ -11,4 +11,5 @@
 
 /*详情*/
 .fdetail{min-height:200px;padding:10px;border-bottom:1px solid #ccc}
-.fdetail h5{margin:10px 0px;}
+.fdetail h5{margin:10px 0px;font-size:18px;}
+.fdetail p{font-size:16px;letter-spacing:1px}

@@ -30,11 +30,18 @@ const find=mongoose.Schema({
     like:Number,
     collect:Number
 })
+const feidian=mongoose.Schema({
+    title:String,
+    user:String,
+    time:String,
+    con:String
+})
 //创建对象
 const Models={
     home:mongoose.model('home',home,'home'),
     zhuanlan:mongoose.model('zhuanlan',zhuanlan,'zhuanlan'),
-    find:mongoose.model('find',find,'find')
+    find:mongoose.model('find',find,'find'),
+    feidian:mongoose.model('feidian',feidian,'feidian')
 }
 
 module.exports=Models

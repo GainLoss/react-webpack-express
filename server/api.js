@@ -59,4 +59,14 @@ router.post('/find/list/show',(req,res)=>{
         }
     })
 })
+//沸点内容
+router.post('/feidian/list/show',(req,res)=>{
+    models.feidian.find().exec((err,data)=>{
+        if(err){
+            res.send(err)
+        }else{
+            res.send(data)
+        }
+    })
+})
 module.exports=router
