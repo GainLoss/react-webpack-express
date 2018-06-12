@@ -1,0 +1,5 @@
+.huodong{width:960px;margin:0 auto;background:#fff;}
+.hd_tab{height:40px;line-height:40px;background:#fff;border-bottom:1px solid #dedede;}
+.hd_tab_ul{width:960px;margin:0 auto;}
+.hd_tab li{padding:0px 10px;float:left;cursor:pointer;font-size:14px;}
+.hd_tab li:hover{color:#007fff}

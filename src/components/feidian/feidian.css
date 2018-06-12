@@ -1,8 +1,8 @@
 .feidian{width:960px;margin:0 auto;}
 .f_left{width:80%;}
-.f_left_text{width:97%;height:100px;padding:10px;outline:none;border:1px solid #ccc;}
+.f_left_text{width:97%;height:60px;padding:10px;outline:none;border:1px solid #ccc;font-size:15px;color:#dfdfdf}
 .f_left_text_choose{height:50px;line-height:50px;font-size:16px;border:1px solid #ccc;display:content-box}
-.f_left_text_choose span{padding:0px 10px;}
+.f_left_text_choose span{padding:0px 10px;color:#007fff}
 .f_left_text_choose button{width:80px;height:40px;text-align:center;color:#fff;font-size:16px;line-height:40px;float:right;background:#007fff;opacity:0.5;border-radius:3px;margin-top:5px;}
 .choose_tab{border-bottom:1px solid #ccc;height:50px;line-height:50px;font-size:18px;text-align:center;}
 .choose_tab span{margin:0px 15px;cursor:pointer;}

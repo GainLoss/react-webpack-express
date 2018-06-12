@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Nav from '../nav.jsx'
+import Tab from './tab.jsx'
+import './huodong.css'
 
 class HD extends React.Component{
     constructor(props){
@@ -12,9 +14,12 @@ class HD extends React.Component{
     }
     render(){
         return (
-            <div>
+            <div >
                 <Nav urlLocation={this.state.url}/>
-                活动
+                <Tab/>
+                <div className='huodong'>
+                    
+                </div>
             </div>
         )
     }

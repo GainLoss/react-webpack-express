@@ -45,7 +45,7 @@ class Detail extends React.Component{
         <div>
             {
                 this.state.result.map((item,index)=>
-                    <div className="fdetail" key={index}>
+                    <div className="fdetail" key={item.id}>
                         <h5>{item.title}</h5>
                         <h5>{item.user} -- {item.time}</h5>
                         <p>{item.con}</p>
